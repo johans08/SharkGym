@@ -50,6 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\IGestorFactura.cs" />
+    <Compile Include="Interface\IGestorRutina.cs" />
+    <Compile Include="Interface\IGestorUsuario.cs" />
     <Compile Include="Modelo\Factura.cs">
       <DependentUpon>ModelSharkGym.tt</DependentUpon>
     </Compile>
@@ -87,6 +90,9 @@
       <DependentUpon>ModelSharkGym.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\GestorFactura.cs" />
+    <Compile Include="Repositories\GestorRutina.cs" />
+    <Compile Include="Repositories\GestorUsuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Modelo\ModelSharkGym.edmx">
@@ -116,5 +122,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
