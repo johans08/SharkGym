@@ -4,56 +4,85 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<!-- ***** Contact Us Area Starts ***** -->
+<section class="section" id="contact-us">
+    <div class="container-fluid">
+        
+        <div class="row">
 
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="contact-form">
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Factura</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.ID_Cliente, "ID_Cliente", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("ID_Cliente", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ID_Cliente, "", new { @class = "text-danger" })
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        double precio = 15000;
+                        double iva = precio * 0.13;
+                        double total = precio - iva;
+
+                        <div class="form-horizontal">
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group ">
+                                @Html.LabelFor(model => model.ID_Cliente, "ID_Cliente", htmlAttributes: new { @class = "control-label col-md-2", @style = "color: #ffffff" })
+                                <div class="col-md-10">
+                                    @Html.DropDownList("ID_Cliente", null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.ID_Cliente, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Mensualidad, htmlAttributes: new { @class = "control-label col-md-2", @style = "color: #ffffff" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Mensualidad, new { htmlAttributes = new { @class = "form-control", @Value = precio, @Readonly = "" } })
+                                    @Html.ValidationMessageFor(model => model.Mensualidad, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Iva, htmlAttributes: new { @class = "control-label col-md-2", @style = "color: #ffffff" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Iva, new { htmlAttributes = new { @class = "form-control", @Value = iva, @Readonly = "" } })
+                                    @Html.ValidationMessageFor(model => model.Iva, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label col-md-2", @style = "color: #ffffff" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @class = "form-control", @Value = total, @Readonly = "" } })
+                                    @Html.ValidationMessageFor(model => model.Total, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Create" class="btn btn-default" />
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="col-lg-12 ">
+                    <div class="section-heading">
+                        <h2>Choose <em>Program</em></h2>
+                        <img src="~/Images/line-dec.png" alt="waves">
+                        <p>Crea un nuevo usuario y empieza tu plan con nosotros.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Mensualidad, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Mensualidad, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Mensualidad, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Iva, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Iva, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Iva, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Total, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
     </div>
-}
+</section>
+<!-- ***** Contact Us Area Ends ***** -->
+
+
+
 
 <div>
     @Html.ActionLink("Back to List", "Index")

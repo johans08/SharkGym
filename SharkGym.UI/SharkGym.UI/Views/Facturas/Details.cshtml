@@ -4,46 +4,72 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>Factura</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Mensualidad)
-        </dt>
+<<section class="section" id="contact-us">
+    <div class="container-fluid">
 
-        <dd>
-            @Html.DisplayFor(model => model.Mensualidad)
-        </dd>
+        <div class="row">
+            <div class=" col-xs-12">
+                <div>
+                    <h1 align="center">Detalles De La <a style="color : #34aa98">Factura</a> </h1>
+                    <hr />
+                    <div align="center">
+                        <dl>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Mensualidad)
+                            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Iva)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Mensualidad)
+                            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Iva)
-        </dd>
+                        </dl>
+                    </div>
+                    <hr />
+                    <div align="center">
+                        <dl>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Iva)
+                            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Total)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Iva)
+                            </dd>
+                        </dl>
+                    </div>
+                    <hr />
+                    <div align="center">
+                        <dl>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Total)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Total)
-        </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.Total)
+                            </dd>
+                        </dl>
+                    </div>
+                    <hr />
+                    <div align="center">
+                        <dl>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Usuario.Nombre)
+                            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Usuario.Nombre)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Usuario.Nombre)
+                            </dd>
+                        </dl>
+                    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Usuario.Nombre)
-        </dd>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Contact Us Area Ends ***** -->
 
-    </dl>
-</div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.PK_IdFactura }) |
     @Html.ActionLink("Back to List", "Index")
