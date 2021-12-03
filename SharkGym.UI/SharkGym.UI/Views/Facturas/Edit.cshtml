@@ -7,9 +7,14 @@
 <!-- ***** Contact Us Area Starts ***** -->
 <section class="section" id="contact-us">
     <div class="container-fluid">
-
-        <div class="row">
-
+            <div class="row" align="center">
+                <div align="center">
+                    <div class="section-heading" align="center">
+                        <h2>Editar <em>Factura</em></h2>
+                        <p>Edita los datos de la factura del cliente.</p>
+                    </div>
+                </div>
+            </div>
             <div class="col-lg-6 col-md-6 col-xs-12">
                 <div class="contact-form">
 
@@ -119,19 +124,19 @@
 
                 </div>
             </div>
-        </div>
 
     </div>
 </section>
 <!-- ***** Contact Us Area Ends ***** -->
 
-
-
-
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+<br>
+<br>
+<p align="left">
+    @Html.ActionLink("Back to List", "Index", new { @id = Model.PK_IdFactura }, new { @class = "btn btn-danger" })
+</p>
+<!-- ***** Contact Us Area Ends ***** -->
+<section class="section" id="contact-us">
+</section>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

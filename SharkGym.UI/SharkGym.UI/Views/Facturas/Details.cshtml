@@ -5,14 +5,20 @@
 }
 
 
-<<section class="section" id="contact-us">
+<section class="section" id="contact-us">
     <div class="container-fluid">
 
         <div class="row">
             <div class=" col-xs-12">
                 <div>
-                    <h1 align="center">Detalles De La <a style="color : #34aa98">Factura</a> </h1>
-                    <hr />
+                    <div class="row" align="center">
+                        <div align="center">
+                            <div class="section-heading" align="center">
+                                <h2>Dettalles de <em>Factura</em></h2>
+                                <p>Verifica los datos de la factura.</p>
+                            </div>
+                        </div>
+                    </div>
                     <div align="center">
                         <dl>
                             <dt>
@@ -61,16 +67,21 @@
                             </dd>
                         </dl>
                     </div>
-
                 </div>
+
             </div>
+            
         </div>
     </div>
 </section>
+<br><br>
+    <p align="center">
+        @Html.ActionLink("Edit", "Edit", new { @id = Model.PK_IdFactura }, new { @class = "btn btn-danger" })  
+        @Html.ActionLink("Back to List", "Index", new { @id = Model.PK_IdFactura }, new { @class = "btn btn-danger" })
+    </p>
 <!-- ***** Contact Us Area Ends ***** -->
+<section class="section" id="contact-us">
 
+</section>
 
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PK_IdFactura }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    

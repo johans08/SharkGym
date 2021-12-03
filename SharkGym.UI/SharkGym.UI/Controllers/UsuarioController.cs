@@ -54,7 +54,7 @@ namespace SharkGym.UI.Controllers
             {
                 db.Usuarios.Add(usuario);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             ViewBag.FK_TipoUsuario = new SelectList(db.TipoUsuarios, "PK_TipoUsuario", "Descripcion", usuario.FK_TipoUsuario);
@@ -128,5 +128,87 @@ namespace SharkGym.UI.Controllers
             }
             base.Dispose(disposing);
         }
+
+        //Muestra el formulario para ingresar sesión
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+
+
+        //Permite el Login del usuario y del administrador
+        public ActionResult LoginUser(Usuario pUsuario)
+        {
+            if (ModelState.IsValid)
+            {
+                using (SharkGymEntities ContextoBD = new SharkGymEntities()) //No debería ir acá, solamente el if
+                {
+                    var data = ContextoBD.Usuarios.Where(a => a.Correo.Equals(pUsuario.Correo) &&
+                    a.Contraseña.Equals(pUsuario.Contraseña) && a.FK_TipoUsuario.Equals(pUsuario.FK_TipoUsuario)).ToList();
+
+                    var data2 = ContextoBD.Usuarios.Where(a => a.Correo.Equals(pUsuario.Correo) &&
+                    a.Contraseña.Equals(pUsuario.Contraseña) && a.FK_TipoUsuario.Equals(pUsuario.FK_TipoUsuario)).ToList();
+
+
+                    Session["Admin"] = null;
+                    Session["Username"] = null;
+
+
+
+
+
+                    if (data.Count() > 0 && pUsuario.FK_TipoUsuario.Equals(2))
+                    {
+                        Session["Username"] = data.FirstOrDefault().Usuario1;
+
+                        //Para los datos del perfil del usuario y admin
+                        Session["Ide"] = data.FirstOrDefault().PK_IdUsuario;
+                        Session["Nombre"] = data.FirstOrDefault().Nombre;
+                        Session["Apellido"] = data.FirstOrDefault().Apellido;
+                        Session["Telefono"] = data.FirstOrDefault().Telefono;
+                        Session["Email"] = data.FirstOrDefault().Correo;
+                        Session["Pass"] = data.FirstOrDefault().Contraseña;
+
+                        return RedirectToAction("Index", "Home");
+
+                    }
+                    else if (data.Count() > 0 && pUsuario.FK_TipoUsuario.Equals(1))
+                    {
+
+                        Session["Admin"] = data.FirstOrDefault().Usuario1;
+
+                        //Para los datos del perfil del usuario y admin
+                        Session["Ide"] = data.FirstOrDefault().PK_IdUsuario;
+                        Session["Nombre"] = data.FirstOrDefault().Nombre;
+                        Session["Apellido"] = data.FirstOrDefault().Apellido;
+                        Session["Telefono"] = data.FirstOrDefault().Telefono;
+                        Session["Email"] = data.FirstOrDefault().Correo;
+                        Session["Pass"] = data.FirstOrDefault().Contraseña;
+
+
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Login");
+                    }
+
+
+                }
+            }
+            return View();
+
+        }
+
+
+        //Permite eliminar de sesión a un usuario y regresarlo al Login
+        public ActionResult Logout()
+        {
+            Session.Remove("Username");
+            Session.Remove("Admin");
+            return RedirectToAction("Login");
+        }
+
     }
 }

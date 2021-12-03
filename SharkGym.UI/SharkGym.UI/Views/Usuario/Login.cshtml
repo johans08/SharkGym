@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<!-- ***** Login Page ***** -->
+<section class="section" id="contact-us">
+    <div class="container-fluid">
+        <div class="row">
+            <div class=" col-xs-12">
+                <div>
+                    <div class="row" align="center">
+                        <div align="center">
+                            <div class="section-heading" align="center">
+                                <h2>Inicia <em>Sesión</em></h2>
+                                <p>¡Inicia Sesión ahora!.</p>
+                                <hr>
+                                <form id="Login" action="LoginUser" controller="Usuario" method="get">
+                                    <div align="center" class="form-group">
+                                        <label for="Correo">Correo</label>
+                                        <input name="Correo" type="email" class="form-control" id="Correo" placeholder="Correo" required="">
+                                    </div>
+                                    <br>
+                                    <div align="center" class="form-group">
+                                        <label for="Contraseña">Contraseña</label>
+                                        <input name="Contraseña" type="password" class="form-control" id="Contraseña" placeholder="Contraseña" required="">
+                                    </div>
+                                    <br>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="FK_TipoUsuario" id="FK_TipoUsuario" value="1" required>
+                                        <label class="form-check-label" for="FK_TipoUsuario">Entrenador</label>
+                                        <input class="form-check-input" type="radio" name="FK_TipoUsuario" id="FK_TipoUsuario" value="2" required>
+                                        <label class="form-check-label" for="FK_TipoUsuario">Cliente</label>
+                                    </div>
+                                    <br>
+                                    <button type="submit" id="btn-Login" class="btn btn-danger">Ingresar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <a href="@Url.Action("Index", "Home")" class="btn btn-info">Volver al Inicio</a>
+            <hr>
+        </div>
+    </div>
+</section>
+
+

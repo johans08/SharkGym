@@ -29,34 +29,70 @@
     </div>
     <!-- ***** Preloader End ***** -->
     <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">Training<em> Studio</em></a>
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
-                            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="#features">About</a></li>
-                            <li class="scroll-to-section"><a href="#our-classes">Classes</a></li>
-                            <li class="scroll-to-section"><a href="#schedule">Schedules</a></li>
-                            <li class="scroll-to-section"><a href="#contact-us">Contact</a></li>
-                            <li class="main-button"><a href="#">Sign Up</a></li>
-                        </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                        <!-- ***** Menu End ***** -->
-                    </nav>
+    @if (Session["Admin"] != null)
+    {
+        <header class="header-area header-sticky">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="main-nav">
+                            <!-- ***** Logo Start ***** -->
+                            <a href="index.html" class="logo">Shark<em>GYM</em></a>
+                            <!-- ***** Logo End ***** -->
+                            <!-- ***** Menu Start ***** -->
+                            <ul class="nav">
+                                <li class="scroll-to-section"><a href="#top" class="active">Clientes</a></li>
+                                <li class="scroll-to-section"><a href="#features">Rutinas</a></li>
+                                <li class="scroll-to-section"><a href="#our-classes">Classes</a></li>
+                                <li class="scroll-to-section"><a href="#schedule">Schedules</a></li>
+                                <li class="scroll-to-section"><a href="#contact-us">Contact</a></li>
+                                <li class="scroll-to-section"><a href="#contact-us">Graficas</a></li>
+                                <li class="main-button"><a href="@Url.Action("Logout", "Usuario")">Sign Out</a></li>
+                            </ul>
+                            <a class='menu-trigger'>
+                                <span>Menu</span>
+                            </a>
+                            <!-- ***** Menu End ***** -->
+                        </nav>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
+    }
+    else if (Session["Username"] != null)
+    {
+        <header class="header-area header-sticky">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="main-nav">
+                            <!-- ***** Logo Start ***** -->
+                            <a href="index.html" class="logo">Training<em> Studio</em></a>
+                            <!-- ***** Logo End ***** -->
+                            <!-- ***** Menu Start ***** -->
+                            <ul class="nav">
+                                <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                                <li class="scroll-to-section"><a href="#features">About</a></li>
+                                <li class="scroll-to-section"><a href="#our-classes">Classes</a></li>
+                                <li class="scroll-to-section"><a href="#schedule">Schedules</a></li>
+                                <li class="scroll-to-section"><a href="#contact-us">Contact</a></li>
+                                <li class="main-button"><a href="@Url.Action("Logout", "Usuario")">Sign Out</a></li>
+                            </ul>
+                            <a class='menu-trigger'>
+                                <span>Menu</span>
+                            </a>
+                            <!-- ***** Menu End ***** -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+    }
+    else
+    {
+        
+    }
     <!-- ***** Header Area End ***** -->
-    
     <!-- ***** Body Pages Start***** -->
     @RenderBody()
     <!-- ***** Body Pages End ***** -->
@@ -116,7 +152,7 @@
                                 </div>
                                 <div class="col-lg-12">
                                     <fieldset>
-                                        <button type="submit" id="form-submit" class="filled-button">Enviar</button>
+                                        <button style="color: white; background-color: #ed563b;" type="submit" id="form-submit" class="filled-button">Enviar</button>
                                     </fieldset>
                                 </div>
                             </div>
@@ -134,7 +170,7 @@
                     <p>
                         Copyright &copy; 2020 Financial Business Co., Ltd.
 
-                        - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                        - Design: <a rel="nofollow noopener" href="https://github.com/johans08" target="_blank">SharkGym</a>
                     </p>
                 </div>
             </div>

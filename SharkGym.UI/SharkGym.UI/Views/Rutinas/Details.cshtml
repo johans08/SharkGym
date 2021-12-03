@@ -4,63 +4,105 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<section class="section" id="contact-us">
+    <div class="container-fluid">
 
-<div>
-    <h4>Rutina</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Ejercicio1)
-        </dt>
+        <div class="row">
+            <div class=" col-xs-12">
+                <div>
+                    <div class="row" align="center">
+                        <div align="center">
+                            <div class="section-heading" align="center">
+                                <h2>Dettalles de <em>Factura</em></h2>
+                                <p>Verifica los datos de la factura.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div align="center">
+                        <dl>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Ejercicio1)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Ejercicio1)
-        </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.Ejercicio1)
+                            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Ejercicio2)
-        </dt>
+                        </dl>
+                    </div>
+                    <hr />
+                    <div align="center">
+                        <dl>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Ejercicio2)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Ejercicio2)
-        </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.Ejercicio2)
+                            </dd>
+                        </dl>
+                    </div>
+                    <hr />
+                    <div align="center">
+                        <dl>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Ejercicio3)
+                            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Ejercicio3)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Ejercicio3)
+                            </dd>
+                        </dl>
+                    </div>
+                    <hr />
+                    <div align="center">
+                        <dl>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Ejercicio4)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Ejercicio3)
-        </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.Ejercicio4)
+                            </dd>
+                        </dl>
+                    </div>
+                    <hr />
+                    <div align="center">
+                        <dl>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Usuario.Nombre)
+                            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Ejercicio4)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Usuario.Nombre)
+                            </dd>
+                        </dl>
+                    </div>
+                    <hr />
+                    <div align="center">
+                        <dl>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Usuario1.Nombre)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Ejercicio4)
-        </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.Usuario1.Nombre)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Usuario.Nombre)
-        </dt>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Usuario.Nombre)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Usuario1.Nombre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Usuario1.Nombre)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PK_IdRutina }) |
-    @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+</section>
+<br>
+<br>
+<p align="center">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PK_IdRutina }, new { @class = "btn btn-danger" })
+    @Html.ActionLink("Back to List", "Index", new { id = Model.PK_IdRutina }, new { @class = "btn btn-danger" })
 </p>
+<!-- ***** Contact Us Area Ends ***** -->
+<section class="section" id="contact-us">
+</section>

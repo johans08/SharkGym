@@ -4,72 +4,98 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<section class="section" id="contact-us">
+    <div class="container-fluid">
 
+        <div class="row">
+            <div class=" col-xs-12">
+                <div>
+                    <div class="row" align="center">
+                        <div align="center">
+                            <div class="section-heading" align="center">
+                                <h2>Tablas de <em>Usuario</em></h2>
+                                <p>Registros de los usuarios registrados.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nombre)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Apellido)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Direccion)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Telefono)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Usuario1)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Correo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Contraseña)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TipoUsuario.Descripcion)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nombre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Apellido)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Direccion)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Telefono)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Usuario1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Correo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Contraseña)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TipoUsuario.Descripcion)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.PK_IdUsuario }, new { @class = "btn btn-success" }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.PK_IdUsuario }, new { @class = "btn btn-info" }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.PK_IdUsuario }, new { @class = "btn btn-danger" })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<br>
+<br>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Action("Create", "Usuario")" class="btn btn-group-justified btn-info">Crear Usuario</a>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Apellido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Direccion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Telefono)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Usuario1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Correo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Contraseña)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TipoUsuario.Descripcion)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Apellido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Direccion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Telefono)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Usuario1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Correo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Contraseña)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoUsuario.Descripcion)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PK_IdUsuario }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PK_IdUsuario }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PK_IdUsuario })
-        </td>
-    </tr>
-}
-
-</table>
+<!-- ***** Contact Us Area Ends ***** -->
+<section class="section" id="contact-us">
+</section>

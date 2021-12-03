@@ -4,60 +4,86 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<section class="section" id="contact-us">
+    <div class="container-fluid">
 
+        <div class="row">
+            <div class=" col-xs-12">
+                <div>
+                    <div class="row" align="center">
+                        <div align="center">
+                            <div class="section-heading" align="center">
+                                <h2>Tablas de <em>Rutinas</em></h2>
+                                <p>Registros de las rutinas que se han creado.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Ejercicio1)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Ejercicio2)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Ejercicio3)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Ejercicio4)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Usuario.Nombre)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Usuario1.Nombre)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Ejercicio1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Ejercicio2)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Ejercicio3)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Ejercicio4)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Usuario.Nombre)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Usuario1.Nombre)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.PK_IdRutina }, new { @class = "btn btn-success" }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.PK_IdRutina }, new { @class = "btn btn-info" }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.PK_IdRutina }, new { @class = "btn btn-danger" })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<br>
+<br>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Action("Create", "Rutinas")" class="btn btn-group-justified btn-info">Crear Rutina</a>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Ejercicio1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ejercicio2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ejercicio3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ejercicio4)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Usuario.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Usuario1.Nombre)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ejercicio1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ejercicio2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ejercicio3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ejercicio4)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Usuario.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Usuario1.Nombre)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PK_IdRutina }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PK_IdRutina }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PK_IdRutina })
-        </td>
-    </tr>
-}
-
-</table>
+<!-- ***** Contact Us Area Ends ***** -->
+<section class="section" id="contact-us">
+</section>

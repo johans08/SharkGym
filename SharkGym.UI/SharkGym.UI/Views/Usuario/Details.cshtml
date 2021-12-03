@@ -3,80 +3,129 @@
 @{
     ViewBag.Title = "Details";
 }
+<section class="section" id="contact-us">
+    <div class="container-fluid">
 
-<h2>Details</h2>
+        <div class="row">
+            <div class=" col-xs-12">
+                <div>
+                    <div class="row" align="center">
+                        <div align="center">
+                            <div class="section-heading" align="center">
+                                <h2>Detalles del <em>Usuario</em></h2>
+                                <p>Verifica los datos del Usuario.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div align="center">
+                        <dl>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Nombre)
+                            </dt>
 
-<div>
-    <h4>Usuario</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Nombre)
+                            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
+                        </dl>
+                    </div>
+                    <hr />
+                    <div align="center">
+                        <dl>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Apellido)
+                            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Apellido)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Apellido)
+                            </dd>
+                        </dl>
+                    </div>
+                    <hr />
+                    <div align="center">
+                        <dl>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Direccion)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Apellido)
-        </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.Direccion)
+                            </dd>
+                        </dl>
+                    </div>
+                    <hr />
+                    <div align="center">
+                        <dl>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Telefono)
+                            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Direccion)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Telefono)
+                            </dd>
+                        </dl>
+                    </div>
+                    <hr />
+                    <div align="center">
+                        <dl>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Usuario1)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Direccion)
-        </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.Usuario1)
+                            </dd>
+                        </dl>
+                    </div>
+                    <hr />
+                    <div align="center">
+                        <dl>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Correo)
+                            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefono)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Correo)
+                            </dd>
+                        </dl>
+                    </div>
+                    <hr />
+                    <div align="center">
+                        <dl>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Contraseña)
+                            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Telefono)
-        </dd>
+                            <dd>
+                                @Html.DisplayFor(model => model.Contraseña)
+                            </dd>
+                        </dl>
+                    </div>
+                    <hr />
+                    <div align="center">
+                        <dl>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.TipoUsuario.Descripcion)
+                            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Usuario1)
-        </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.TipoUsuario.Descripcion)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Usuario1)
-        </dd>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Correo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Correo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Contraseña)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Contraseña)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TipoUsuario.Descripcion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TipoUsuario.Descripcion)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PK_IdUsuario }) |
-    @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+</section>
+<br>
+<br>
+<p align="center">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PK_IdUsuario }, new { @class = "btn btn-danger" })
+    @Html.ActionLink("Ir a la Lista", "Index", new { id = Model.PK_IdUsuario }, new { @class = "btn btn-danger" })
 </p>
+<!-- ***** Contact Us Area Ends ***** -->
+<section class="section" id="contact-us">
+</section>

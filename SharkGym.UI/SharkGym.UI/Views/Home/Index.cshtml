@@ -14,7 +14,19 @@
             <h6>work harder, get stronger</h6>
             <h2>easy with our <em>gym</em></h2>
             <div class="main-button scroll-to-section">
-                <a href="#features">Become a member</a>
+                @if (Session["Admin"] != null)
+                {
+                    <a>Bienvenido: @HttpContext.Current.Session["Admin"].ToString()</a>
+                }
+                else if (Session["Username"] != null)
+                {
+                    <a>Bienvenido: @HttpContext.Current.Session["Username"].ToString()</a>
+                }
+                else
+                {
+                    <a href="@Url.Action("Login", "Usuario")">Inicia Sesión</a>
+                    <a href="@Url.Action("Create", "Usuario")">Registrar Usuario</a>
+                }
             </div>
         </div>
     </div>
@@ -136,10 +148,10 @@
         <div class="row" id="tabs">
             <div class="col-lg-4">
                 <ul>
-                    <li><a href='#tabs-1'><img src="~/Images/tabs-first-icon.png" alt="">First Training Class</a></li>
-                    <li><a href='#tabs-2'><img src="~/Images/tabs-first-icon.png" alt="">Second Training Class</a></a></li>
-                    <li><a href='#tabs-3'><img src="~/Images/tabs-first-icon.png" alt="">Third Training Class</a></a></li>
-                    <li><a href='#tabs-4'><img src="~/Images/tabs-first-icon.png" alt="">Fourth Training Class</a></a></li>
+                    <li><a href='#tabs-1' style="color: white; background-color: #ed563b;"><img src="~/Images/tabs-first-icon.png" alt="">First Training Class</a></li>
+                    <li><a href='#tabs-2' style="color: white; background-color: #ed563b;"><img src="~/Images/tabs-first-icon.png" alt="">Second Training Class</a></a></li>
+                    <li><a href='#tabs-3' style="color: white; background-color: #ed563b;"><img src="~/Images/tabs-first-icon.png" alt="">Third Training Class</a></a></li>
+                    <li><a href='#tabs-4' style="color: white; background-color: #ed563b;"><img src="~/Images/tabs-first-icon.png" alt="">Fourth Training Class</a></a></li>
                     <div class="main-rounded-button"><a href="#">View All Schedules</a></div>
                 </ul>
             </div>
@@ -189,7 +201,7 @@
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
                 <div class="section-heading dark-bg">
-                    <h2>Classes <em>Schedule</em></h2>
+                    <h2 style="color: azure">Classes <em>Schedule</em></h2>
                     <img src="~/Images/line-dec.png" alt="">
                     <p>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor, ultricies fermentum massa consequat eu.</p>
                 </div>
