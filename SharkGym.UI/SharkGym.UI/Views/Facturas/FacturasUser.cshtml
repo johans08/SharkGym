@@ -1,0 +1,68 @@
+﻿@model IEnumerable<SharkGym.DB.Modelo.Factura>
+
+@{
+    ViewBag.Title = "FacturasUser";
+}
+
+<section class="section" id="contact-us">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class=" col-xs-12">
+                <div>
+                    <div class="row" align="center">
+                        <div align="center">
+                            <div class="section-heading" align="center">
+                                <h2>Facturas <em>Personales</em></h2>
+                                <p>Registros de las facturas que se han creado para ti.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Mensualidad)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Iva)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Total)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Usuario.Nombre)
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Mensualidad)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Iva)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Total)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Usuario.Nombre)
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<br>
+<br>
+<!-- ***** Contact Us Area Ends ***** -->
+<section class="section" id="contact-us">
+</section>

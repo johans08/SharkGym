@@ -63,6 +63,14 @@ namespace SharkGym.UI.Controllers
             return View(rutina);
         }
 
+        public ActionResult RutinasUser()
+        {
+            var sesion = (Int32)Session["Ide"];
+            var rutinas = db.Rutinas.Where(r => r.ID_Cliente.Equals(sesion));
+            return View(rutinas.ToList());
+
+        }
+
         // GET: Rutinas/Edit/5
         public ActionResult Edit(int? id)
         {

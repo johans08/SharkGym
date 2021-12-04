@@ -120,6 +120,14 @@ namespace SharkGym.UI.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult FacturasUser()
+        {
+            var sesion = (Int32)Session["Ide"];
+            var rutinas = db.Facturas.Where(r => r.ID_Cliente.Equals(sesion));
+            return View(rutinas.ToList());
+
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

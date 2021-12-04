@@ -164,6 +164,8 @@ namespace SharkGym.UI.Controllers
                         Session["Pass"] = data.FirstOrDefault().Contraseña;
                         Session["Rol"] = data.FirstOrDefault().FK_TipoUsuario;
 
+
+                        TempData["sesion"] = Session["Ide"];
                         return RedirectToAction("Index", "Home");
 
                     }

@@ -26,5 +26,13 @@ namespace SharkGym.UI.Controllers
 
             return View();
         }
+
+        public ActionResult Charts() //En otro Controlador
+        {
+
+            ViewBag.Message = "Administracion de Reportes.";
+
+            return View();
+        }
     }
 }
