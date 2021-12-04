@@ -147,16 +147,9 @@ namespace SharkGym.UI.Controllers
                     var data = ContextoBD.Usuarios.Where(a => a.Correo.Equals(pUsuario.Correo) &&
                     a.Contraseña.Equals(pUsuario.Contraseña) && a.FK_TipoUsuario.Equals(pUsuario.FK_TipoUsuario)).ToList();
 
-                    var data2 = ContextoBD.Usuarios.Where(a => a.Correo.Equals(pUsuario.Correo) &&
-                    a.Contraseña.Equals(pUsuario.Contraseña) && a.FK_TipoUsuario.Equals(pUsuario.FK_TipoUsuario)).ToList();
-
-
                     Session["Admin"] = null;
                     Session["Username"] = null;
-
-
-
-
+                    Session["Entrenador"] = null;
 
                     if (data.Count() > 0 && pUsuario.FK_TipoUsuario.Equals(2))
                     {
@@ -169,11 +162,12 @@ namespace SharkGym.UI.Controllers
                         Session["Telefono"] = data.FirstOrDefault().Telefono;
                         Session["Email"] = data.FirstOrDefault().Correo;
                         Session["Pass"] = data.FirstOrDefault().Contraseña;
+                        Session["Rol"] = data.FirstOrDefault().FK_TipoUsuario;
 
                         return RedirectToAction("Index", "Home");
 
                     }
-                    else if (data.Count() > 0 && pUsuario.FK_TipoUsuario.Equals(1))
+                    else if (data.Count() > 0 && pUsuario.FK_TipoUsuario.Equals(3))
                     {
 
                         Session["Admin"] = data.FirstOrDefault().Usuario1;
@@ -185,7 +179,23 @@ namespace SharkGym.UI.Controllers
                         Session["Telefono"] = data.FirstOrDefault().Telefono;
                         Session["Email"] = data.FirstOrDefault().Correo;
                         Session["Pass"] = data.FirstOrDefault().Contraseña;
+                        Session["Rol"] = data.FirstOrDefault().FK_TipoUsuario;
 
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else if (data.Count() > 0 && pUsuario.FK_TipoUsuario.Equals(1))
+                    {
+
+                        Session["Entrenador"] = data.FirstOrDefault().Usuario1;
+
+                        //Para los datos del perfil del usuario y admin
+                        Session["Ide"] = data.FirstOrDefault().PK_IdUsuario;
+                        Session["Nombre"] = data.FirstOrDefault().Nombre;
+                        Session["Apellido"] = data.FirstOrDefault().Apellido;
+                        Session["Telefono"] = data.FirstOrDefault().Telefono;
+                        Session["Email"] = data.FirstOrDefault().Correo;
+                        Session["Pass"] = data.FirstOrDefault().Contraseña;
+                        Session["Rol"] = data.FirstOrDefault().FK_TipoUsuario;
 
                         return RedirectToAction("Index", "Home");
                     }
@@ -207,7 +217,14 @@ namespace SharkGym.UI.Controllers
         {
             Session.Remove("Username");
             Session.Remove("Admin");
+            Session.Remove("Entrenador");
             return RedirectToAction("Login");
+        }
+
+        //Muestra el perfil del usuario que se encuentra en sesión en ese momento
+        public ActionResult Profile()
+        {
+            return View();
         }
 
     }

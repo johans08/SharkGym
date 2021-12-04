@@ -37,16 +37,15 @@
                     <div class="col-12">
                         <nav class="main-nav">
                             <!-- ***** Logo Start ***** -->
-                            <a href="index.html" class="logo">Shark<em>GYM</em></a>
+                            <a href="@Url.Action("Index", "Home")" class="logo">Shark<em>GYM</em></a>
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
                             <ul class="nav">
-                                <li class="scroll-to-section"><a href="#top" class="active">Clientes</a></li>
-                                <li class="scroll-to-section"><a href="#features">Rutinas</a></li>
-                                <li class="scroll-to-section"><a href="#our-classes">Classes</a></li>
-                                <li class="scroll-to-section"><a href="#schedule">Schedules</a></li>
-                                <li class="scroll-to-section"><a href="#contact-us">Contact</a></li>
-                                <li class="scroll-to-section"><a href="#contact-us">Graficas</a></li>
+                                <li class="scroll-to-section"><a href="@Url.Action("Profile", "Usuario")" class="active">Perfil</a></li>
+                                <li class="scroll-to-section"><a href="@Url.Action("Index", "Usuario")" class="active">Clientes</a></li>
+                                <li class="scroll-to-section"><a href="@Url.Action("Index", "Rutinas")">Rutinas</a></li>
+                                <li class="scroll-to-section"><a href="@Url.Action("Index", "Facturas")">Facturas</a></li>
+                                <li class="scroll-to-section"><a href="@Url.Action("Charts", "Home")">Graficas</a></li>
                                 <li class="main-button"><a href="@Url.Action("Logout", "Usuario")">Sign Out</a></li>
                             </ul>
                             <a class='menu-trigger'>
@@ -67,15 +66,40 @@
                     <div class="col-12">
                         <nav class="main-nav">
                             <!-- ***** Logo Start ***** -->
-                            <a href="index.html" class="logo">Training<em> Studio</em></a>
+                            <a href="@Url.Action("Index", "Home")" class="logo">Training<em> Studio</em></a>
                             <!-- ***** Logo End ***** -->
                             <!-- ***** Menu Start ***** -->
                             <ul class="nav">
-                                <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                                <li class="scroll-to-section"><a href="#features">About</a></li>
-                                <li class="scroll-to-section"><a href="#our-classes">Classes</a></li>
-                                <li class="scroll-to-section"><a href="#schedule">Schedules</a></li>
-                                <li class="scroll-to-section"><a href="#contact-us">Contact</a></li>
+                                <li class="scroll-to-section"><a href="@Url.Action("Profile", "Usuario")" class="active">Perfil</a></li>
+                                <li class="scroll-to-section"><a href="@Url.Action("RutinasUser", "Rutinas")">Rutinas</a></li>
+                                <li class="scroll-to-section"><a href="@Url.Action("FacturasUser", "Facturas")">Facturas</a></li>
+                                <li class="scroll-to-section"><a href="@Url.Action("Charts", "Home")">Graficas</a></li>
+                                <li class="main-button"><a href="@Url.Action("Logout", "Usuario")">Sign Out</a></li>
+                            </ul>
+                            <a class='menu-trigger'>
+                                <span>Menu</span>
+                            </a>
+                            <!-- ***** Menu End ***** -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+    }
+    else if (Session["Entrenador"] != null)
+    {
+        <header class="header-area header-sticky">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="main-nav">
+                            <!-- ***** Logo Start ***** -->
+                            <a href="@Url.Action("Index", "Home")" class="logo">Training<em> Studio</em></a>
+                            <!-- ***** Logo End ***** -->
+                            <!-- ***** Menu Start ***** -->
+                            <ul class="nav">
+                                <li class="scroll-to-section"><a href="@Url.Action("Profile", "Usuario")" class="active">Perfil</a></li>
+                                <li class="scroll-to-section"><a href="@Url.Action("Index", "Rutinas")">Rutinas</a></li>
                                 <li class="main-button"><a href="@Url.Action("Logout", "Usuario")">Sign Out</a></li>
                             </ul>
                             <a class='menu-trigger'>
@@ -90,7 +114,7 @@
     }
     else
     {
-        
+
     }
     <!-- ***** Header Area End ***** -->
     <!-- ***** Body Pages Start***** -->

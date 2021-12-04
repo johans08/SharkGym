@@ -22,6 +22,10 @@
                 {
                     <a>Bienvenido: @HttpContext.Current.Session["Username"].ToString()</a>
                 }
+                else if (Session["Entrenador"] != null)
+                {
+                    <a>Bienvenido: @HttpContext.Current.Session["Entrenador"].ToString()</a>
+                }
                 else
                 {
                     <a href="@Url.Action("Login", "Usuario")">Inicia Sesión</a>

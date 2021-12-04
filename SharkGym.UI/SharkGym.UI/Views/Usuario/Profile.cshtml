@@ -1,0 +1,140 @@
+﻿@model SharkGym.DB.Modelo.Usuario
+
+@{
+    ViewBag.Title = "Profile";
+}
+
+
+<section class="section" id="contact-us">
+    <div class="container-fluid">
+        <div class="row" align="center">
+            <div align="center">
+                <h2 style="font-size: 36px; font-weight: 600; color: #1e1e1e; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0px; margin-bottom: 0px; ">Datos <em style=" font-style: normal; color: #ed563b;">Personales</em></h2>
+                <p>¡Revisa tus datos del perfil!.</p>
+                <div class="section-heading" align="center">
+                    <div class="row">
+                        @if (Session["Admin"] != null)
+                        {
+
+                        }
+                        else if (Session["Username"] != null)
+                        {
+
+                        }
+                        else if (Session["Entrenador"] != null)
+                        {
+
+                        }
+                        <form>
+                            <div class="form-group-lg" align="center">
+                                <fieldset>
+                                    <label for="id">Cedula</label>
+                                    <input name="Id" type="text" class="form-control" id="id" placeholder="Id" readonly="readonly" value=@HttpContext.Current.Session["Ide"].ToString()>
+                                </fieldset>
+                            </div>
+
+                            <div class="form-group-lg" align="center">
+                                <fieldset>
+                                    <label for="nombre">Nombre</label>
+                                    <input name="Nombre" type="text" class="form-control" id="nombre" placeholder="Nombre" readonly="readonly" value=@HttpContext.Current.Session["Nombre"].ToString()>
+                                </fieldset>
+                            </div>
+
+                            <div class="form-group-lg" align="center">
+                                <fieldset>
+                                    <label for="Apellido">Apellido</label>
+                                    <input name="Apellido" type="text" class="form-control" id="apellido" placeholder="Apellido" readonly="readonly" value=@HttpContext.Current.Session["Apellido"].ToString()>
+                                </fieldset>
+                            </div>
+
+                            <div class="form-group-lg" align="center">
+                                <fieldset>
+                                    <label for="Telefono">Telefono</label>
+                                    <input name="Telefono" type="tel" class="form-control" id="numero" placeholder="Teléfono" readonly="readonly" value=@HttpContext.Current.Session["Telefono"].ToString()>
+                                </fieldset>
+                            </div>
+
+                            <div class="form-group-lg" align="center">
+                                <fieldset>
+                                    <label for="Email">E-mail</label>
+                                    <input name="Email" type="email" class="form-control" id="email" placeholder="E-Mail Address" readonly="readonly" value=@HttpContext.Current.Session["Email"].ToString()>
+                                </fieldset>
+                            </div>
+                            @if (Session["Admin"] != null)
+                            {
+                                <div class="form-group-lg" align="center">
+                                    <fieldset>
+                                        <label for="Username">Usuario</label>
+                                        <input name="Username" type="text" class="form-control" id="usuario" placeholder="Usuario" readonly="readonly" value=@HttpContext.Current.Session["Admin"].ToString()>
+                                    </fieldset>
+                                </div>
+                            }
+                            else if (Session["Username"] != null)
+                            {
+                                <div class="form-group-lg" align="center">
+                                    <fieldset>
+                                        <label for="Username">Usuario</label>
+                                        <input name="Username" type="text" class="form-control" id="usuario" placeholder="Usuario" readonly="readonly" value=@HttpContext.Current.Session["Username"].ToString()>
+                                    </fieldset>
+                                </div>
+                            }
+                            else if (Session["Entrenador"] != null)
+                            {
+                                <div class="form-group-lg" align="center">
+                                    <fieldset>
+                                        <label for="Username">Usuario</label>
+                                        <input name="Username" type="text" class="form-control" id="usuario" placeholder="Usuario" readonly="readonly" value=@HttpContext.Current.Session["Entrenador"].ToString()>
+                                    </fieldset>
+                                </div>
+                            }
+
+
+                            <div class="form-group-lg" align="center">
+                                <fieldset>
+                                    <label for="Pass">Contraseña</label>
+                                    <input name="Pass" type="text" class="form-control" id="contrasena" placeholder="Contraseña" readonly="readonly" value=@HttpContext.Current.Session["Pass"].ToString()>
+                                </fieldset>
+                            </div>
+
+                            @if (Session["Admin"] != null)
+                            {
+                                <div class="form-group-lg" align="center">
+                                    <fieldset>
+                                        <label for="TipoUsuario">Rol</label>
+                                        <input name="TipoUsuario" type="text" class="form-control" id="TipoUsuario" placeholder="TipoUsuario" readonly="readonly" value="Administrador  @HttpContext.Current.Session["Rol"].ToString()">
+                                    </fieldset>
+                                </div>
+                            }
+                            else if (Session["Username"] != null)
+                            {
+                                <div class="form-group-lg" align="center">
+                                    <fieldset>
+                                        <label for="TipoUsuario">Rol</label>
+                                        <input name="TipoUsuario" type="text" class="form-control" id="TipoUsuario" placeholder="TipoUsuario" readonly="readonly" value="Cliente  @HttpContext.Current.Session["Rol"].ToString()">
+                                    </fieldset>
+                                </div>
+                            }
+                            else if (Session["Entrenador"] != null)
+                            {
+                                <div class="form-group-lg" align="center">
+                                    <fieldset>
+                                        <label for="TipoUsuario">Rol</label>
+                                        <input name="TipoUsuario" type="text" class="form-control" id="TipoUsuario" placeholder="TipoUsuario" readonly="readonly" value="Entrenador  @HttpContext.Current.Session["Rol"].ToString()">
+                                    </fieldset>
+                                </div>
+                            }
+
+                            <br><br>
+                            <div class="form-group-lg" align="center">
+                                <fieldset>
+                                    <button type="submit" id="form-submit" class="btn btn-info">Guardar cambios</button>
+                                </fieldset>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+</section>
